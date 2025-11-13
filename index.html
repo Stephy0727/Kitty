@@ -28,8 +28,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <script src="https://unpkg.com/dexie/dist/dexie.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://phoebeboo.github.io/mewoooo/pp.js" defer></script>
-    <script src="taobao.js"></script> 
+     <script src="https://phoebeboo.github.io/mewoooo/pp.js" defer></script>
     <style>
     </style>
 </head>
@@ -153,6 +152,7 @@
                         </div>
                         <span class="small-widget-label">X</span>
                     </div>
+                    <!-- ▼▼▼ 用这块【最终完美融合版】代码，替换掉你上面的 small-widget ▼▼▼ -->
                     <div class="small-widget" id="taobao-app-icon">
                         <div class="small-widget-icon-wrapper">
                             <img class="small-widget-img" id="icon-img-taobao" src="https://i.postimg.cc/k401K5g7/IMG-7304.jpg" alt="桃宝">
@@ -749,6 +749,8 @@
                         <span class="slider"></span>
                     </label>
                 </div>
+                <!-- ▲▲▲ 新增HTML结束 ▲▲▲ -->
+<!-- ▼▼▼ 在这里粘贴下面的新代码 ▼▼▼ -->
 <hr style="margin: 30px 0; opacity: 0.3;">
 <h3 style="border-bottom: 1px solid #eee; padding-bottom: 10px;">语音消息设置 (Minimax TTS)</h3>
 <p style="font-size: 14px; color: #666; background-color: #f0f0f0; padding: 10px; border-radius: 8px;">
@@ -3737,180 +3739,9 @@
 <input type="file" id="ai-avatar-upload-input" accept="image/*" hidden>
 <input type="file" id="group-avatar-upload-input" accept="image/*" hidden>
 
-        <!-- ▼▼▼ 【全新】这是“饿了么”的内容视图 ▼▼▼ -->
-        <div id="eleme-view" class="taobao-view">
-            <!-- ▼▼▼ 请用这整块代码，完整替换掉上面那块旧的 .taobao-search-bar ▼▼▼ -->
-            <div class="taobao-search-bar">
-                <!-- 新增：这是第一行的“搜索”组 -->
-                <div class="eleme-search-group">
-                    <input type="search" id="eleme-search-input" placeholder="想吃点什么？让AI帮你找！">
-                    <button id="eleme-search-btn">搜索</button>
-                </div>
-            
-                <!-- 新增：这是第二行的“功能”组 -->
-                <div class="eleme-actions-group">
-                    <button id="eleme-add-manual-btn" class="header-actions" title="手动添加美食">+</button>
-                    <button id="eleme-generate-ai-btn" class="header-actions" title="AI生成美食">✨</button>
-                    <button id="eleme-clear-all-btn" class="header-btn">🗑️</button>
-                </div>
-            </div>
-            <!-- ▲▲▲ 替换结束 ▲▲▲ -->
-                        <div id="eleme-grid" class="product-grid">
-                            <!-- 美食列表将由JS动态生成在这里 -->
-                        </div>
-                    </div>
-                    <!-- ▲▲▲ 新增结束 ▲▲▲ -->
-            
-                    <!-- “购物车”视图 (保持不变) -->
-                    <div id="cart-view" class="taobao-view">
-                        <div id="cart-item-list"></div>
-                        <div id="cart-checkout-bar" style="display: none;">
-                            <div class="total-price">
-                                合计: <span id="cart-total-price">¥ 0.00</span>
-                            </div>
-                            <div style="display: flex; gap: 10px;">
-                                <button id="share-cart-to-char-btn">分享给Ta代付</button>
-                                <button id="buy-for-char-btn">为Ta购买</button>
-                                <button id="checkout-btn">结算(0)</button>
-                            </div>
-                        </div>
-                    </div>
-            
-                    <!-- “我的订单”视图 (保持不变) -->
-                    <div id="orders-view" class="taobao-view">
-                        <div id="order-list" class="order-list"></div>
-                    </div>
-            
-                    <!-- “我的”视图 (保持不变) -->
-                    <div id="my-view" class="taobao-view">
-                        <div id="user-balance-container">
-                            <p>我的余额</p>
-                            <h2 id="user-balance-display">¥ 0.00</h2>
-                            <button id="top-up-btn" class="form-button">给钱包充点钱</button>
-                        </div>
-                        <div id="balance-details-list" class="order-list" style="padding: 0 15px;"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="product-detail-modal" class="modal">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <span>商品详情</span>
-                    </div>
-                    <div class="modal-body" id="product-detail-body">
-                        <!-- 详情内容将由JS动态生成 -->
-                    </div>
-                    <!-- ★★★ 这是我们新增的评价区域 ★★★ -->
-                    <div id="product-reviews-section">
-                        <h3>宝贝评价</h3>
-                        <div id="product-reviews-list">
-                            <!-- 评价内容会由JS动态生成在这里 -->
-                        </div>
-                        <button id="generate-reviews-btn" class="form-button form-button-secondary">✨ AI生成评价</button>
-                    </div>
-                    <!-- ▲▲▲ 新增结束 ▲▲▲ -->
-                    <div class="modal-footer">
-                        <button class="cancel" id="close-product-detail-btn">关闭</button>
-                        <button class="save" id="detail-add-to-cart-btn">加入购物车</button>
-                    </div>
-                </div>
-            </div>
-            <!-- ▲▲▲ 替换结束 ▲▲▲ -->
-            
-            
-            <!-- 2. 添加商品的方式选择弹窗 -->
-            <div id="add-product-choice-modal" class="modal">
-                <div id="custom-modal" style="width: 250px;">
-                    <div class="custom-modal-header">选择添加方式</div>
-                    <div class="custom-modal-footer">
-                        <button id="add-product-manual-btn">手动添加</button>
-                        <button id="add-product-link-btn">识别链接</button>
-                        <button id="add-product-ai-btn">AI生成</button>
-                        <button id="cancel-add-choice-btn" style="margin-top: 8px; border-radius: 8px; background-color: #f0f0f0;">取消</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 3. 手动添加/编辑商品弹窗 -->
-            <div id="product-editor-modal" class="modal">
-                <div class="modal-content" style="height: auto;">
-                    <div class="modal-header">
-                        <span id="product-editor-title">添加新商品</span>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="product-name-input">商品名称</label>
-                            <input type="text" id="product-name-input">
-                        </div>
-                        <div class="form-group">
-                            <label for="product-price-input">价格 (元)</label>
-                            <input type="number" id="product-price-input">
-                        </div>
-                        <div class="form-group">
-                            <label for="product-image-input">图片 URL</label>
-                            <input type="text" id="product-image-input">
-                        </div>
-                        <div class="form-group">
-                            <label for="product-category-input">分类 (选填)</label>
-                            <input type="text" id="product-category-input" placeholder="例如：衣服, 零食...">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="cancel" id="cancel-product-editor-btn">取消</button>
-                        <button class="save" id="save-product-btn">保存</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 4. 识别链接弹窗 -->
-            <div id="add-from-link-modal" class="modal">
-                <div class="modal-content" style="height: auto;">
-                    <div class="modal-header">
-                        <span>粘贴分享文案</span>
-                    </div>
-                    <div class="modal-body">
-                        <textarea id="link-paste-area" rows="6" placeholder="请在这里粘贴完整的淘宝或拼多多分享文案..."></textarea>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="cancel" id="cancel-link-paste-btn">取消</button>
-                        <button class="save" id="confirm-link-paste-btn">识别</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 【全新】物流详情页面 -->
-            <div id="logistics-screen" class="screen">
-                <div class="header">
-                    <span class="back-btn" id="logistics-back-btn">‹</span>
-                    <span>物流详情</span>
-                    <span style="width: 30px;"></span> <!-- 占位符，让标题居中 -->
-                </div>
-                <div id="logistics-content-area" class="list-container">
-                    <!-- 物流信息将由JS动态生成在这里 -->
-                </div>
-            </div>
-            <!-- 【全新】AI生成商品结果/选择弹窗 -->
-            <div id="ai-generated-products-modal" class="modal">
-                <div class="modal-content" style="height: 80%;">
-                    <div class="modal-header">
-                        <span id="ai-products-modal-title">AI为你生成了以下宝贝</span>
-                    </div>
-                    <div class="modal-body" style="padding: 15px;">
-                        <div id="ai-product-results-grid" class="product-grid">
-                            <!-- AI生成的商品会显示在这里 -->
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="save" id="close-ai-products-modal-btn" style="width: 100%;">完成</button>
-                    </div>
-                </div>
-            </div>
-            
+
 
 <script>
-
-
 // ▼▼▼ 在这里粘贴下面的新代码 ▼▼▼
 if (!Array.prototype.findLastIndex) {
   Object.defineProperty(Array.prototype, 'findLastIndex', {
@@ -5107,7 +4938,14 @@ window.db = db;
     return arr[Math.floor(Math.random() * arr.length)];
 }
 // ▲▲▲ 新增函数结束 ▲▲▲
-
+// ▼▼▼ 【全新】在这里添加缺失的随机图片函数 ▼▼▼
+function getRandomDefaultProductImage() {
+    const defaultImages = [
+        'https://i.postimg.cc/kG7C0gGP/11.jpg',
+        'https://i.postimg.cc/W4svy4Hm/Image-1760206134285.jpg'
+    ];
+    return getRandomItem(defaultImages);
+}
                 // ===================================================================
                 // 3. 所有功能函数定义
                 // ===================================================================
@@ -6312,6 +6150,7 @@ async function cleanupRedundantData() {
         await showCustomAlert('清理失败', `发生了一个错误: ${error.message}`);
     }
 }
+        // ▼▼▼ 【这是导出函数修复版】 ▼▼▼
         async function exportBackup() {
             try {
                 const backupData = {
@@ -6323,10 +6162,16 @@ async function cleanupRedundantData() {
                     chats, worldBooks, userStickers, apiConfig, globalSettings,
                     personaPresets, musicLibrary, qzoneSettings, qzonePosts,
                     qzoneAlbums, qzonePhotos, favorites, qzoneGroups,
-                    memories, worldBookCategories, apiPresets, callRecords, renderingRules,
-                    stickerCategories, appearancePresets, presets, presetCategories, taobaoProducts,
-                    taobaoOrders, taobaoCart,
-
+                    memories, worldBookCategories,
+                    apiPresets, callRecords,
+                    renderingRules,
+                    stickerCategories,
+                    // ▼▼▼ 在这里添加新代码 ▼▼▼
+                    appearancePresets,
+                    // ▼▼▼ 在这里添加新代码 ▼▼▼
+                    presets,              // <-- 【本次新增修复】
+                    presetCategories,
+    // 【核心新增】
     npcs 
                 ] = await Promise.all([
                     db.chats.toArray(),
@@ -6348,23 +6193,30 @@ async function cleanupRedundantData() {
                     db.callRecords.toArray(),
                     db.renderingRules.toArray(),
                     db.stickerCategories.toArray(),
+                    // ▼▼▼ 在这里添加新代码 ▼▼▼
                     db.appearancePresets.toArray(),
-                    db.presets.toArray(),
+                    // ▼▼▼ 在这里添加新代码 ▼▼▼
+                    db.presets.toArray(),             // <-- 【本次新增修复】
                     db.presetCategories.toArray(),
-                    db.taobaoProducts.toArray(),
-                    db.taobaoOrders.toArray(),
-                    db.taobaoCart.toArray(),
-                    db.npcs.toArray() 
+    // 【核心新增】
+    db.npcs.toArray() 
                 ]);
         
                 Object.assign(backupData, {
                     chats, worldBooks, userStickers, apiConfig, globalSettings,
                     personaPresets, musicLibrary, qzoneSettings, qzonePosts,
                     qzoneAlbums, qzonePhotos, favorites, qzoneGroups,
-                    memories, worldBookCategories, apiPresets, callRecords,
-                    renderingRules, stickerCategories, appearancePresets,
-                    presets, presetCategories, Products,
-                    taobaoOrders, taobaoCart, npcs, usetaobaorStickerCategories  
+                    memories, worldBookCategories,
+                    apiPresets, callRecords,
+                    renderingRules,
+                    stickerCategories,
+                    // ▼▼▼ 在这里添加新代码 ▼▼▼
+                    appearancePresets,
+                    // ▼▼▼ 在这里添加新代码 ▼▼▼
+                    presets,              // <-- 【本次新增修复】
+                    presetCategories,
+    // 【核心新增】
+    npcs  
                 });
                 
                 const blob = new Blob(
@@ -11670,6 +11522,7 @@ chat.history.push(aiClaimedMessage);
                             }
                             continue;
                         }
+                        // ▼▼▼ 在这里粘贴下面的新代码 ▼▼▼
 case 'cart_payment_response': {
     const decision = msgData.decision;
     const responseText = msgData.response_text;
@@ -25621,7 +25474,12 @@ function openCharArticle(index) {
             }
             // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
         }
+        // ▲▲▲ 替换结束 ▲▲▲
 
+// ▲▲▲ 全新JS代码粘贴结束 ▲▲▲
+/**
+ * 【全新 | V3.2 | 终极网络与逻辑修复版】请用这个全新的函数，完整替换旧的 handleGenerateTaobaoHistory 函数
+ */
 async function handleGenerateTaobaoHistory() {
     if (!activeCharacterId) return;
     const chat = state.chats[activeCharacterId];
@@ -34898,6 +34756,582 @@ function getRelativeDateString(date) {
     }
 }
 
+/* --- 【全新】“桃宝”App 核心功能函数 --- */
+
+/**
+ * 【全新】处理角色手机钱包余额和交易记录的通用函数
+ * @param {string} charId - 要更新钱包的角色ID
+ * @param {number} amount - 交易金额 (正数为收入, 负数为支出)
+ * @param {string} description - 交易描述
+ */
+async function updateCharacterPhoneBankBalance(charId, amount, description) {
+    const chat = state.chats[charId];
+    if (!chat || chat.isGroup) return;
+
+    if (!chat.characterPhoneData) chat.characterPhoneData = {};
+    if (!chat.characterPhoneData.bank) chat.characterPhoneData.bank = { balance: 0, transactions: [] };
+    if (typeof chat.characterPhoneData.bank.balance !== 'number') chat.characterPhoneData.bank.balance = 0;
+
+    chat.characterPhoneData.bank.balance += amount;
+
+    const newTransaction = {
+        type: amount > 0 ? '收入' : '支出',
+        amount: Math.abs(amount),
+        description: description,
+        timestamp: Date.now()
+    };
+    
+    // 让最新的交易记录显示在最前面
+    if (!Array.isArray(chat.characterPhoneData.bank.transactions)) {
+        chat.characterPhoneData.bank.transactions = [];
+    }
+    chat.characterPhoneData.bank.transactions.unshift(newTransaction);
+
+    await db.chats.put(chat);
+    console.log(`✅ 角色[${chat.name}]钱包已更新: 金额=${amount.toFixed(2)}, 新余额=${chat.characterPhoneData.bank.balance.toFixed(2)}`);
+}
+
+/**
+ * 【全新】打开一个单选的角色选择器，让用户选择一个代付对象
+ * @returns {Promise<string|null>} - 返回选中的角色ID，如果取消则返回null
+ */
+async function openCharSelectorForCart() {
+    return new Promise(resolve => {
+        // 复用分享功能的弹窗，很方便
+        const modal = document.getElementById('share-target-modal');
+        const listEl = document.getElementById('share-target-list');
+        const titleEl = document.getElementById('share-target-modal-title');
+        const confirmBtn = document.getElementById('confirm-share-target-btn');
+        const cancelBtn = document.getElementById('cancel-share-target-btn');
+
+        titleEl.textContent = '分享给谁代付？';
+        listEl.innerHTML = '';
+
+        const singleChats = Object.values(state.chats).filter(c => !c.isGroup);
+
+        if (singleChats.length === 0) {
+            alert("你还没有任何可以分享的好友哦。");
+            modal.classList.remove('visible');
+            resolve(null);
+            return;
+        }
+
+        // 使用 radio 单选按钮
+        singleChats.forEach(chat => {
+            const item = document.createElement('div');
+            item.className = 'contact-picker-item';
+            item.innerHTML = `
+                <input type="radio" name="cart-share-target" value="${chat.id}" id="target-${chat.id}" style="margin-right: 15px;">
+                <label for="target-${chat.id}" style="display:flex; align-items:center; width:100%; cursor:pointer;">
+                    <img src="${chat.settings.aiAvatar || defaultAvatar}" class="avatar">
+                    <span class="name">${chat.name}</span>
+                </label>
+            `;
+            listEl.appendChild(item);
+        });
+
+        modal.classList.add('visible');
+
+        const newConfirmBtn = confirmBtn.cloneNode(true);
+        confirmBtn.parentNode.replaceChild(newConfirmBtn, confirmBtn);
+        const newCancelBtn = cancelBtn.cloneNode(true);
+        cancelBtn.parentNode.replaceChild(newCancelBtn, cancelBtn);
+        
+        const cleanup = () => modal.classList.remove('visible');
+
+        newConfirmBtn.onclick = () => {
+            const selectedRadio = document.querySelector('input[name="cart-share-target"]:checked');
+            if (selectedRadio) {
+                cleanup();
+                resolve(selectedRadio.value);
+            } else {
+                alert("请选择一个代付对象！");
+            }
+        };
+
+        newCancelBtn.onclick = () => {
+            cleanup();
+            resolve(null);
+        };
+    });
+}
+
+/**
+ * 【全新】清空桃宝购物车
+ */
+async function clearTaobaoCart() {
+    await db.taobaoCart.clear();
+    await renderTaobaoCart();
+    updateCartBadge();
+}
+
+/**
+ * 【全新】根据购物车内容创建订单
+ * @param {Array} cartItems - 购物车项目数组
+ */
+async function createOrdersFromCart(cartItems) {
+    if (!cartItems || cartItems.length === 0) return;
+    const newOrders = cartItems.map((item, index) => ({
+        productId: item.productId,
+        quantity: item.quantity,
+        timestamp: Date.now() + index, // 防止时间戳完全相同
+        status: '已付款，等待发货'
+    }));
+    await db.taobaoOrders.bulkAdd(newOrders);
+    // 简单模拟物流更新
+    setTimeout(async () => {
+        const ordersToUpdate = await db.taobaoOrders.where('status').equals('已付款，等待发货').toArray();
+        for (const order of ordersToUpdate) {
+            await db.taobaoOrders.update(order.id, { status: '已发货，运输中' });
+        }
+    }, 1000 * 10);
+}
+
+// ▼▼▼ 请用下面这整块【修复后】的代码，完整替换掉你旧的 handleShareCart 函数 ▼▼▼
+
+/**
+ * 【全新总入口 | 已修复备注名】处理“分享给Ta代付”的全部逻辑
+ */
+async function handleShareCart() {
+    const cartItems = await db.taobaoCart.toArray();
+    if (cartItems.length === 0) {
+        alert("购物车是空的，先去加点宝贝吧！");
+        return;
+    }
+
+    const targetChatId = await openCharSelectorForCart();
+    if (!targetChatId) return;
+
+    const char = state.chats[targetChatId];
+    if (!char) return;
+
+    let totalPrice = 0;
+    const productPromises = cartItems.map(item => db.taobaoProducts.get(item.productId));
+    const products = await Promise.all(productPromises);
+    cartItems.forEach((item, index) => {
+        const product = products[index];
+        if (product) {
+            totalPrice += product.price * item.quantity;
+        }
+    });
+
+    const charBalance = char.characterPhoneData?.bank?.balance || 0;
+    if (charBalance < totalPrice) {
+        await showCustomAlert("代付失败", `“${char.name}”的钱包余额不足！\n需要 ¥${totalPrice.toFixed(2)}，但余额只有 ¥${charBalance.toFixed(2)}。`);
+        return;
+    }
+    
+    const confirmed = await showCustomConfirm(
+        '确认代付',
+        `将分享购物车给“${char.name}”并请求代付，共计 ¥${totalPrice.toFixed(2)}。\n这将会清空你的购物车，并从Ta的钱包扣款。确定吗？`,
+        { confirmText: '确定' }
+    );
+
+    if (!confirmed) return;
+    
+    await showCustomAlert("处理中...", "正在通知Ta代付并下单...");
+    
+    // --- ▼▼▼ 这就是本次的核心修改 ▼▼▼ ---
+
+    // 1. 获取角色的手机数据，准备查找备注名
+    const characterPhoneData = char.characterPhoneData || { chats: {} };
+    
+    // 2. 在角色的联系人中，找到代表“用户”的那个联系人对象
+    //    （通常是那个没有聊天记录的特殊联系人条目）
+    const userContactInData = Object.values(characterPhoneData.chats || {}).find(c => !c.history || c.history.length === 0);
+    
+    // 3. 获取角色给用户的备注名，如果没设置，就默认用“我”
+    const remarkForUser = userContactInData ? userContactInData.remarkName : '我';
+    
+    // 4. 使用这个新的备注名来创建交易记录
+    const description = `为“${remarkForUser}”的桃宝购物车买单`;
+    await updateCharacterPhoneBankBalance(targetChatId, -totalPrice, description);
+    
+    // --- ▲▲▲ 修改结束 ▲▲▲ ---
+
+    await createOrdersFromCart(cartItems);
+
+    const itemsSummary = products.map((p, i) => `${p.name} x${cartItems[i].quantity}`).join('、 ');
+    
+    // 给AI看的隐藏指令，告诉它发生了什么
+    const hiddenMessage = {
+        role: 'system',
+        content: `[系统提示：用户刚刚与你分享了TA的购物车，并请求你为总价为 ¥${totalPrice.toFixed(2)} 的商品付款。你已经同意并支付了，你的钱包余额已被扣除。商品包括：${itemsSummary}。请根据你的人设对此作出回应，例如表示宠溺、抱怨花钱太多或者询问买了什么。]`,
+        timestamp: Date.now(),
+        isHidden: true
+    };
+    char.history.push(hiddenMessage);
+    await db.chats.put(char);
+
+    await clearTaobaoCart();
+
+    await showCustomAlert("操作成功", `“${char.name}”已成功为你买单！`);
+    renderChatList();
+    
+    openChat(targetChatId); // 跳转到聊天界面
+    triggerAiResponse(); // 让AI回应这次代付
+}
+
+// ▲▲▲ 替换结束 ▲▲▲
+
+// ▼▼▼ 把下面这两块全新的函数，粘贴到你的JS功能函数定义区 ▼▼▼
+
+/**
+ * 【全新】处理“为Ta购买”的全部逻辑
+ */
+async function handleBuyForChar() {
+    const cartItems = await db.taobaoCart.toArray();
+    if (cartItems.length === 0) {
+        alert("购物车是空的，先去加点宝贝吧！");
+        return;
+    }
+
+    const targetChatId = await openCharSelectorForCart();
+    if (!targetChatId) return; // 用户取消选择
+
+    const char = state.chats[targetChatId];
+    if (!char) return;
+
+    let totalPrice = 0;
+    const productPromises = cartItems.map(item => db.taobaoProducts.get(item.productId));
+    const products = await Promise.all(productPromises);
+    products.forEach((product, index) => {
+        if (product) {
+            totalPrice += product.price * cartItems[index].quantity;
+        }
+    });
+
+    // 检查用户余额
+    if ((state.globalSettings.userBalance || 0) < totalPrice) {
+        alert(`余额不足！本次需要 ¥${totalPrice.toFixed(2)}，但你的余额只有 ¥${(state.globalSettings.userBalance || 0).toFixed(2)}。`);
+        return;
+    }
+
+    const confirmed = await showCustomConfirm(
+        '确认赠送',
+        `确定要花费 ¥${totalPrice.toFixed(2)} 为“${char.name}”购买购物车中的所有商品吗？`,
+        { confirmText: '为Ta买单' }
+    );
+
+    if (confirmed) {
+        await showCustomAlert("正在处理...", "正在为你心爱的Ta下单...");
+
+        // 1. 扣除用户余额
+        await updateUserBalanceAndLogTransaction(-totalPrice, `为 ${char.name} 购买商品`);
+        
+        // 2. 将购物车内容转化为订单（记录在你的订单里）
+        await createOrdersFromCart(cartItems);
+
+        // 3. 发送礼物通知给对方
+        await sendGiftNotificationToChar(targetChatId, products, cartItems, totalPrice);
+        
+        // 4. 清空购物车
+        await clearTaobaoCart();
+
+        await showCustomAlert("赠送成功！", `你为“${char.name}”购买的礼物已下单，并已通过私信通知对方啦！`);
+        renderChatList(); // 刷新列表，显示未读消息
+    }
+}
+
+// ▼▼▼ 用这块【新代码】替换旧的 sendGiftNotificationToChar 函数 ▼▼▼
+// ▼▼▼ 把下面这两块全新的函数，粘贴到你的JS功能函数定义区 ▼▼▼
+
+/**
+ * 【全新】处理“为Ta购买”的全部逻辑
+ */
+async function handleBuyForChar() {
+    const cartItems = await db.taobaoCart.toArray();
+    if (cartItems.length === 0) {
+        alert("购物车是空的，先去加点宝贝吧！");
+        return;
+    }
+
+    const targetChatId = await openCharSelectorForCart();
+    if (!targetChatId) return; // 用户取消选择
+
+    const char = state.chats[targetChatId];
+    if (!char) return;
+
+    let totalPrice = 0;
+    const productPromises = cartItems.map(item => db.taobaoProducts.get(item.productId));
+    const products = await Promise.all(productPromises);
+    products.forEach((product, index) => {
+        if (product) {
+            totalPrice += product.price * cartItems[index].quantity;
+        }
+    });
+
+    // 检查用户余额
+    if ((state.globalSettings.userBalance || 0) < totalPrice) {
+        alert(`余额不足！本次需要 ¥${totalPrice.toFixed(2)}，但你的余额只有 ¥${(state.globalSettings.userBalance || 0).toFixed(2)}。`);
+        return;
+    }
+
+    const confirmed = await showCustomConfirm(
+        '确认赠送',
+        `确定要花费 ¥${totalPrice.toFixed(2)} 为“${char.name}”购买购物车中的所有商品吗？`,
+        { confirmText: '为Ta买单' }
+    );
+
+    if (confirmed) {
+        await showCustomAlert("正在处理...", "正在为你心爱的Ta下单...");
+
+        // 1. 扣除用户余额
+        await updateUserBalanceAndLogTransaction(-totalPrice, `为 ${char.name} 购买商品`);
+        
+        // 2. 将购物车内容转化为订单（记录在你的订单里）
+        await createOrdersFromCart(cartItems);
+
+        // 3. 发送礼物通知给对方
+        await sendGiftNotificationToChar(targetChatId, products, cartItems, totalPrice);
+        
+        // 4. 清空购物车
+        await clearTaobaoCart();
+
+        await showCustomAlert("赠送成功！", `你为“${char.name}”购买的礼物已下单，并已通过私信通知对方啦！`);
+        renderChatList(); // 刷新列表，显示未读消息
+    }
+}
+
+// ▼▼▼ 用这块【最终正确版】代码，完整替换旧的 sendGiftNotificationToChar 函数 ▼▼▼
+
+/**
+ * 【全新 | 最终正确版】发送礼物通知到指定角色的聊天
+ * 效果：发送一条本质是文本、但外观是卡片的消息。
+ *      - 用户界面显示为漂亮的礼物卡片。
+ *      - 消息数据中包含完整的文本信息。
+ *      - AI 仍然通过隐藏的系统指令接收信息。
+ */
+async function sendGiftNotificationToChar(targetChatId, products, cartItems, totalPrice) {
+    const chat = state.chats[targetChatId];
+    if (!chat) return;
+
+    const itemsSummary = products.map((p, i) => `${p.name} x${cartItems[i].quantity}`).join('、');
+    
+    // 1. 【核心】先准备好这条消息的“文本内容”
+    const messageTextContent = `我给你买了新礼物，希望你喜欢！\n商品清单：${itemsSummary}\n合计：¥${totalPrice.toFixed(2)}`;
+
+    // 2. 创建对用户【可见】的消息对象。现在它同时拥有 “文本内容” 和 “卡片样式指令”
+    const visibleMessage = {
+        role: 'user',
+        
+        // 【核心修改】为这条消息添加一个 content 属性，这就是它的“文本本体”
+        // 当你复制这条消息时，复制出来的内容就是这个。
+        content: messageTextContent, 
+        
+        // 同时保留 type 和 payload，它们告诉渲染器“把这条消息画成卡片”
+        type: 'gift_notification', 
+        timestamp: Date.now(),
+        payload: {
+            senderName: state.qzoneSettings.nickname || '我',
+            itemSummary: itemsSummary,
+            totalPrice: totalPrice,
+            itemCount: cartItems.length,
+        }
+    };
+    chat.history.push(visibleMessage);
+
+    // 3. 【这部分不变】创建一条给AI看的【隐藏】指令，确保AI能理解并回应
+    const hiddenMessage = {
+        role: 'system',
+        content: `[系统指令：用户刚刚为你购买了${cartItems.length}件商品，总价值为${totalPrice.toFixed(2)}元。商品包括：${itemsSummary}。请根据你的人设对此表示感谢或作出其他反应。]`,
+        timestamp: Date.now() + 1,
+        isHidden: true
+    };
+    chat.history.push(hiddenMessage);
+
+    // 4. 【这部分不变】未读消息只增加1条
+    chat.unreadCount = (chat.unreadCount || 0) + 1;
+    await db.chats.put(chat);
+    
+    // 5. 【这部分不变】发送横幅通知
+    if (state.activeChatId !== targetChatId) {
+        showNotification(targetChatId, '你收到了一份礼物！');
+    }
+}
+// ▲▲▲ 替换结束 ▲▲▲
+
+
+
+
+// ▼▼▼ 【全新】购物车代付功能核心函数 ▼▼▼
+
+/**
+ * 【全新总入口 | 无隐藏消息版】处理用户点击“分享给Ta代付”按钮的逻辑
+ */
+async function handleShareCartRequest() {
+    const cartItems = await db.taobaoCart.toArray();
+    if (cartItems.length === 0) {
+        alert("购物车是空的，先去加点宝贝吧！");
+        return;
+    }
+
+    const targetChatId = await openCharSelectorForCart();
+    if (!targetChatId) return;
+
+    const chat = state.chats[targetChatId];
+    if (!chat) return;
+
+    let totalPrice = 0;
+    const productPromises = cartItems.map(item => db.taobaoProducts.get(item.productId));
+    const products = await Promise.all(productPromises);
+    const itemsSummary = products.map((p, i) => {
+        if(p) {
+            totalPrice += p.price * cartItems[i].quantity;
+            return `${p.name} x${cartItems[i].quantity}`;
+        }
+        return '';
+    }).filter(Boolean).join('、 ');
+    
+    const charBalance = chat.characterPhoneData?.bank?.balance || 0;
+
+    const confirmed = await showCustomConfirm(
+        '确认代付请求',
+        `将向“${chat.name}”发起购物车代付请求，共计 ¥${totalPrice.toFixed(2)}。`,
+        { confirmText: '发送请求' }
+    );
+
+    if (!confirmed) return;
+
+    // --- ▼▼▼【核心修改】在这里，我们只创建一条消息 ▼▼▼ ---
+    
+    // 1. 直接将所有信息都放入 content 字段，让用户也能看到
+    const requestContent = `[购物车代付请求]
+总金额: ¥${totalPrice.toFixed(2)}
+商品: ${itemsSummary}
+(你的当前余额: ¥${charBalance.toFixed(2)})
+请使用 'cart_payment_response' 指令回应。`;
+
+    // 2. 创建一条普通的用户消息，不再有 isHidden 标记
+    const requestMessage = {
+        role: 'user', // 由用户发出
+        type: 'cart_share_request', // 类型保持不变，用于UI渲染
+        timestamp: Date.now(),
+        content: requestContent, // 将包含所有信息的文本作为内容
+        payload: { // payload 依然保留，用于UI渲染卡片
+            totalPrice: totalPrice,
+            itemCount: cartItems.length,
+            status: 'pending' 
+        }
+    };
+    
+    // 3. 将这条【单一的】消息添加到历史记录
+    chat.history.push(requestMessage);
+
+    // --- ▲▲▲ 修改结束 ▲▲▲ ---
+
+    await db.chats.put(chat);
+    
+    await showCustomAlert("请求已发送", `已将代付请求发送给“${chat.name}”，请在聊天中查看TA的回应。`);
+    
+    openChat(targetChatId);
+}
+
+
+/**
+ * 【辅助函数】打开一个单选的角色选择器，让用户选择代付对象
+ * (这个函数复用了分享功能的弹窗，稍作修改)
+ */
+async function openCharSelectorForCart() {
+    return new Promise(resolve => {
+        const modal = document.getElementById('share-target-modal');
+        const listEl = document.getElementById('share-target-list');
+        const titleEl = document.getElementById('share-target-modal-title');
+        const confirmBtn = document.getElementById('confirm-share-target-btn');
+        const cancelBtn = document.getElementById('cancel-share-target-btn');
+
+        titleEl.textContent = '分享给谁代付？';
+        listEl.innerHTML = '';
+
+        const singleChats = Object.values(state.chats).filter(c => !c.isGroup);
+
+        if (singleChats.length === 0) {
+            alert("你还没有任何可以分享的好友哦。");
+            modal.classList.remove('visible');
+            resolve(null);
+            return;
+        }
+
+        // 使用 radio 单选按钮
+        singleChats.forEach(chat => {
+            const item = document.createElement('div');
+            item.className = 'contact-picker-item';
+            item.innerHTML = `
+                <input type="radio" name="cart-share-target" value="${chat.id}" id="target-${chat.id}" style="margin-right: 15px;">
+                <label for="target-${chat.id}" style="display:flex; align-items:center; width:100%; cursor:pointer;">
+                    <img src="${chat.settings.aiAvatar || defaultAvatar}" class="avatar">
+                    <span class="name">${chat.name}</span>
+                </label>
+            `;
+            listEl.appendChild(item);
+        });
+
+        modal.classList.add('visible');
+
+        const newConfirmBtn = confirmBtn.cloneNode(true);
+        confirmBtn.parentNode.replaceChild(newConfirmBtn, confirmBtn);
+        const newCancelBtn = cancelBtn.cloneNode(true);
+        cancelBtn.parentNode.replaceChild(newCancelBtn, cancelBtn);
+        
+        const cleanup = () => modal.classList.remove('visible');
+
+        newConfirmBtn.onclick = () => {
+            const selectedRadio = document.querySelector('input[name="cart-share-target"]:checked');
+            if (selectedRadio) {
+                cleanup();
+                resolve(selectedRadio.value);
+            } else {
+                alert("请选择一个代付对象！");
+            }
+        };
+
+        newCancelBtn.onclick = () => {
+            cleanup();
+            resolve(null);
+        };
+    });
+}
+
+/**
+ * 【辅助函数】清空用户的桃宝购物车
+ */
+async function clearTaobaoCart() {
+    await db.taobaoCart.clear();
+    updateCartBadge();
+    // 如果用户正好在看购物车，就刷新一下
+    if (document.getElementById('cart-view').classList.contains('active')) {
+        renderTaobaoCart();
+    }
+}
+
+/**
+ * 【辅助函数】根据购物车内容创建订单
+ * @param {Array} cartItems - 从数据库读出的购物车项目数组
+ */
+async function createOrdersFromCart(cartItems) {
+    if (!cartItems || cartItems.length === 0) return;
+    const newOrders = cartItems.map((item, index) => ({
+        productId: item.productId,
+        quantity: item.quantity,
+        timestamp: Date.now() + index, // 防止时间戳完全相同
+        status: '已付款，等待发货'
+    }));
+    await db.taobaoOrders.bulkAdd(newOrders);
+    
+    // 模拟10秒后自动发货
+    setTimeout(async () => {
+        const orderIds = newOrders.map(order => order.timestamp);
+        const ordersToUpdate = await db.taobaoOrders.where('timestamp').anyOf(orderIds).toArray();
+        for (const order of ordersToUpdate) {
+            await db.taobaoOrders.update(order.id, { status: '已发货，运输中' });
+        }
+        console.log(`${ordersToUpdate.length} 个新订单状态已更新为“已发货”。`);
+    }, 1000 * 10);
+}
+
+// ▲▲▲ 新功能函数结束 ▲▲▲
+
+/* --- “桃宝”App 功能函数结束 --- */
 // ▼▼▼ 【全新】强力保活功能的核心控制函数 ▼▼▼
 
 /**
@@ -37288,6 +37722,7 @@ if (deleteBtn) {
                     document.getElementById('save-api-preset-btn').addEventListener('click', saveApiPreset);
                     document.getElementById('delete-api-preset-btn').addEventListener('click', deleteApiPreset);
                     // ▲▲▲ 新增结束 ▲▲▲
+        // ▼▼▼ 在 init() 的事件监听器区域添加这行代码 ▼▼▼
         document.getElementById('add-world-book-entry-btn').addEventListener('click', () => {
             const container = document.getElementById('world-book-entries-container');
             // 如果之前有提示语，先清空
@@ -37298,6 +37733,8 @@ if (deleteBtn) {
             container.appendChild(newBlock);
             newBlock.querySelector('.entry-content-textarea').focus(); // 自动聚焦到新块的内容区
         });
+        // ▲▲▲ 新增事件绑定结束 ▲▲▲
+                    // ▼▼▼ 在 init() 函数的事件监听器区域，粘贴下面这两行 ▼▼▼
         document.getElementById('switch-greeting-btn').addEventListener('click', handleSwitchGreeting);
         // ▼▼▼ 【全新】为心声历史列表添加“加载更多”的事件委托 ▼▼▼
         document.getElementById('thoughts-history-list').addEventListener('click', (e) => {
@@ -37305,7 +37742,12 @@ if (deleteBtn) {
                 loadMoreThoughts();
             }
         });
+        // ▲▲▲ 新增代码结束 ▲▲▲
+        // 在 init() 的事件监听器区域添加
+        
+        // ▼▼▼ 【核心修改】将事件监听绑定到新的图标按钮上 ▼▼▼
         document.getElementById('profile-history-icon-btn').addEventListener('click', showThoughtsHistory);
+        // ▲▲▲ 替换结束 ▲▲▲
         document.getElementById('history-back-btn').addEventListener('click', hideThoughtsHistory);
         document.getElementById('character-profile-modal').addEventListener('click', (e) => {
             // 如果点击的是深色背景本身，而不是内容区域，就关闭弹窗
@@ -37520,10 +37962,15 @@ if (deleteBtn) {
             }
         });
         
+        // ▼▼▼ 在 init() 函数末尾添加 ▼▼▼
         if (state.globalSettings.enableBackgroundActivity) {
             startBackgroundSimulation();
             console.log("后台活动模拟已自动启动。");
-        }        
+        }
+        // ▲▲▲ 添加结束 ▲▲▲
+        
+        // ▼▼▼ 【这是最终的正确代码】请粘贴这段代码到 init() 的事件监听器区域末尾 ▼▼▼
+        
         // --- 统一处理所有影响预览的控件的事件 ---
         
         // 1. 监听主题选择
@@ -37555,9 +38002,12 @@ if (deleteBtn) {
             updateSettingsPreview();
         });
         
+        // ▲▲▲ 粘贴结束 ▲▲▲
+        // 【请确保这段代码在您的 init() 函数内】
         document.getElementById('lyrics-vertical-pos').addEventListener('change', updateSettingsPreview);
         document.getElementById('lyrics-horizontal-pos').addEventListener('change', updateSettingsPreview);
         document.getElementById('lyrics-offset-input').addEventListener('input', updateSettingsPreview);
+        // ▼▼▼ 请将这段【新代码】粘贴到 init() 的事件监听器区域末尾 ▼▼▼
         document.querySelectorAll('input[name="visibility"]').forEach(radio => {
             radio.addEventListener('change', function() {
                 const groupsContainer = document.getElementById('post-visibility-groups');
@@ -37568,6 +38018,9 @@ if (deleteBtn) {
                 }
             });
         });
+        // ▲▲▲ 新代码粘贴结束 ▲▲▲
+        
+        // ▼▼▼ 请将这段【新代码】粘贴到 init() 的事件监听器区域末尾 ▼▼▼
         document.getElementById('manage-groups-btn').addEventListener('click', openGroupManager);
         document.getElementById('close-group-manager-btn').addEventListener('click', () => {
             document.getElementById('group-management-modal').classList.remove('visible');
@@ -37585,6 +38038,9 @@ if (deleteBtn) {
                 deleteGroup(groupId);
             }
         });
+        // ▲▲▲ 新代码粘贴结束 ▲▲▲
+        
+        // ▼▼▼ 请将这段【新代码】粘贴到 init() 的事件监听器区域末尾 ▼▼▼
         // 消息操作菜单的按钮事件
         document.getElementById('cancel-message-action-btn').addEventListener('click', hideMessageActions);
         // ▼▼▼ 【修正】使用新的编辑器入口 ▼▼▼
@@ -37606,6 +38062,9 @@ if (deleteBtn) {
                 enterSelectionMode(timestampToSelect);
             }
         });
+        // ▲▲▲ 替换结束 ▲▲▲
+        // ▼▼▼ 在 init() 的事件监听器区域添加 ▼▼▼
+        
         // 监听聊天区域的点击，专门用于处理AI发来的转账
         document.getElementById('chat-messages').addEventListener('click', (e) => {
             // 1. 向上查找被点击的元素是否在一个消息气泡内
@@ -37629,6 +38088,10 @@ if (deleteBtn) {
         document.getElementById('transfer-action-accept').addEventListener('click', () => handleUserTransferResponse('accepted'));
         document.getElementById('transfer-action-decline').addEventListener('click', () => handleUserTransferResponse('declined'));
         document.getElementById('transfer-action-cancel').addEventListener('click', hideTransferActionModal);
+        
+        // ▲▲▲ 添加结束 ▲▲▲
+        // ▼▼▼ 在 init() 函数的事件监听器区域末尾添加 ▼▼▼
+        
         // 动态操作菜单的按钮事件
         document.getElementById('edit-post-btn').addEventListener('click', openPostEditor);
         document.getElementById('copy-post-btn').addEventListener('click', copyPostContent);
@@ -37821,6 +38284,10 @@ if (deleteBtn) {
         
         // 2. 绑定回忆录界面的返回按钮
         document.getElementById('memories-back-btn').addEventListener('click', () => switchToChatListView('messages-view'));
+        
+        // ▲▲▲ 新增结束 ▲▲▲
+        
+        // ▼▼▼ 在 init() 函数的事件监听器区域找到这个按钮的监听器 ▼▼▼
         document.getElementById('confirm-create-countdown-btn').addEventListener('click', async () => {
             const title = document.getElementById('countdown-title-input').value.trim();
             const dateValue = document.getElementById('countdown-date-input').value;
@@ -38120,7 +38587,11 @@ if (deleteBtn) {
         
         // 【核心新增】为文件选择器绑定 change 事件，这是处理上传的核心入口
         document.getElementById('group-avatar-upload-input').addEventListener('change', handleLocalGroupAvatarUpload);
+        
+        // ▲▲▲ 替换结束 ▲▲▲
         document.getElementById('close-group-avatar-library-btn').addEventListener('click', closeGroupAvatarLibraryModal);
+        // ▲▲▲ 新增结束 ▲▲▲
+        // ▼▼▼ 在 init() 的事件监听区域，粘贴这段【新代码】▼▼▼
 // 为 EPhone 图标设置网格绑定事件委托
 document.getElementById('icon-settings-grid').addEventListener('click', (e) => {
     if (e.target.classList.contains('change-icon-btn')) {
@@ -38131,6 +38602,10 @@ document.getElementById('icon-settings-grid').addEventListener('click', (e) => {
         }
     }
 });
+        // ▲▲▲ 新代码粘贴结束 ▲▲▲
+        
+        // ▼▼▼ 在 init() 函数的末尾，粘贴这段【全新的事件监听器】 ▼▼▼
+        
             document.getElementById('chat-messages').addEventListener('click', (e) => {
                 // 使用 .closest() 向上查找被点击的卡片
                 const linkCard = e.target.closest('.link-share-card');
@@ -38177,6 +38652,7 @@ document.getElementById('icon-settings-grid').addEventListener('click', (e) => {
                 closeQzoneStickerPanel();
             }
         });
+        // ▼▼▼ 在 init() 函数的末尾，粘贴这段【全新的事件监听器】 ▼▼▼
         
             // 1. 绑定输入框上方“分享链接”按钮的点击事件
             document.getElementById('share-link-btn').addEventListener('click', openShareLinkModal);
@@ -38192,9 +38668,17 @@ document.getElementById('icon-settings-grid').addEventListener('click', (e) => {
         // ▲▲▲ 新代码粘贴结束 ▲▲▲
         
         document.getElementById('theme-toggle-switch').addEventListener('change', toggleTheme);
+        
+
+        // ▼▼▼ 在 init() 的事件监听器区域添加这行代码 ▼▼▼
         document.getElementById('share-location-btn').addEventListener('click', sendLocationShare);
+        // 在你的 init() 函数的事件监听器区域...
+        
+
         // ▼▼▼ 用这段【新代码】替换旧的通话记录事件绑定 ▼▼▼
+        
         document.getElementById('chat-list-title').addEventListener('click', renderCallHistoryScreen);
+        
         // 2. 绑定通话记录页面的“返回”按钮
         document.getElementById('call-history-back-btn').addEventListener('click', () => {
             // 【核心修改】返回到聊天列表页面，而不是聊天界面
@@ -38213,13 +38697,21 @@ document.getElementById('icon-settings-grid').addEventListener('click', (e) => {
 document.getElementById('close-call-transcript-btn').addEventListener('click', () => {
     document.getElementById('call-transcript-modal').classList.remove('visible');
 });
+        
+        // ▲▲▲ 替换结束 ▲▲▲
+        
+
+        
         document.getElementById('chat-header-status').addEventListener('click', handleEditStatusClick);
+        
+        // 在 init() 的事件监听器区域添加
         document.getElementById('selection-share-btn').addEventListener('click', () => {
             if (selectedMessages.size > 0) {
                 openShareTargetPicker(); // 打开我们即将创建的目标选择器
             }
         });
         document.getElementById('selection-screenshot-btn').addEventListener('click', handleLongScreenshot);
+        // 在 init() 的事件监听器区域添加
         document.getElementById('confirm-share-target-btn').addEventListener('click', async () => {
             const sourceChat = state.chats[state.activeChatId];
             const selectedTargetIds = Array.from(document.querySelectorAll('.share-target-checkbox:checked'))
@@ -38274,7 +38766,9 @@ document.getElementById('close-call-transcript-btn').addEventListener('click', (
             document.getElementById('share-target-modal').classList.remove('visible');
         });
         
+        // 在 init() 的事件监听器区域添加
         document.getElementById('chat-messages').addEventListener('click', (e) => {
+            // ...你已有的其他点击事件逻辑...
         
             // 新增逻辑：处理分享卡片的点击
             const shareCard = e.target.closest('.link-share-card[data-timestamp]');
@@ -38391,6 +38885,8 @@ document.getElementById('playlist-body').addEventListener('click', async (e) => 
             audioPlayer.currentTime = (clickX / barWidth) * audioPlayer.duration;
         });
         
+        // ▼▼▼ 在 init() 函数的事件监听器区域，粘贴这段新代码 ▼▼▼
+        
         // 使用事件委托来处理所有“已撤回消息”的点击事件
         document.getElementById('chat-messages').addEventListener('click', (e) => {
             // 检查被点击的元素或其父元素是否是“已撤回”提示
@@ -38439,6 +38935,10 @@ if (placeholder) {
     }
 }
 });
+        
+        // ▲▲▲ 新代码粘贴结束 ▲▲▲
+        
+        // ▼▼▼ 在 init() 的事件监听器区域，粘贴这段新代码 ▼▼▼
         document.getElementById('manage-world-book-categories-btn').addEventListener('click', openCategoryManager);
         document.getElementById('close-category-manager-btn').addEventListener('click', () => {
             document.getElementById('world-book-category-manager-modal').classList.remove('visible');
@@ -38451,14 +38951,25 @@ if (placeholder) {
                 deleteCategory(categoryId);
             }
         });
+        // ▼▼▼ 在 init() 的事件监听器区域末尾，添加这部分代码 ▼▼▼
         document.getElementById('repost-cancel-btn').addEventListener('click', hideRepostModal);
         document.getElementById('repost-confirm-btn').addEventListener('click', handleConfirmRepost);
+        // ▲▲▲ 添加结束 ▲▲▲
+
+        // 在 init() 的事件监听器区域末尾
+        // ...
         // 绑定消息操作菜单中的“引用”按钮
         document.getElementById('quote-message-btn').addEventListener('click', startReplyToMessage);
+        
         // 绑定回复预览栏中的“取消”按钮
-        document.getElementById('cancel-reply-btn').addEventListener('click', cancelReplyMode);        
+        document.getElementById('cancel-reply-btn').addEventListener('click', cancelReplyMode);
+        // ...
+        // ▲▲▲ 新代码粘贴结束 ▲▲▲
+        
                 // ===================================================================
                 // 5. 启动！
+        
+            // ▼▼▼ 【请将这段全新的代码粘贴进去】 ▼▼▼
             
             // 使用事件委托，为动态评论区的@功能绑定事件
             document.getElementById('qzone-posts-list').addEventListener('input', (e) => {
@@ -38636,6 +39147,7 @@ document.getElementById('memory-list-container').addEventListener('click', (e) =
         return;
     }
 });
+        // ▲▲▲ 替换结束 ▲▲▲
         // ▼▼▼ 【全新】五子棋功能事件监听器 ▼▼▼
         document.getElementById('gomoku-btn').addEventListener('click', toggleGomokuBoard);
         document.getElementById('close-gomoku-btn').addEventListener('click', closeGomokuBoard);
@@ -38644,6 +39156,8 @@ document.getElementById('memory-list-container').addEventListener('click', (e) =
         gomokuCanvas.addEventListener('mousemove', handleBoardHover);
         gomokuCanvas.addEventListener('mouseout', () => renderGomokuBoard(state.activeChatId)); // Clear hover on exit
         gomokuCanvas.addEventListener('click', handleBoardClick);
+        // ▲▲▲ 新增代码结束 ▲▲▲
+        // ▼▼▼ 【这是修复代码】请将这段代码粘贴到 init() 函数的事件监听器区域末尾 ▼▼▼
         document.getElementById('add-countdown-btn').addEventListener('click', () => {
             // 清空输入框
             document.getElementById('countdown-title-input').value = '';
@@ -38901,6 +39415,7 @@ document.getElementById('save-wallpaper-btn').addEventListener('click', async ()
     alert('外观设置已保存并应用！');
     showScreen('home-screen');
 });
+// ▲▲▲ 新增代码结束 ▲▲▲
 // ▼▼▼ 【全新】这是为“网络URL”按钮添加的功能，请粘贴到 init() 函数的事件监听器区域 ▼▼▼
 document.getElementById('upload-global-bg-url-btn').addEventListener('click', async () => {
     // 1. 弹出一个输入框，让用户输入URL
@@ -38967,10 +39482,12 @@ document.getElementById('remove-cphone-bg-btn').addEventListener('click', () => 
         document.getElementById('css-preset-select').addEventListener('change', handleCssPresetSelectionChange);
         document.getElementById('save-css-preset-btn').addEventListener('click', saveCssPreset);
         document.getElementById('delete-css-preset-btn').addEventListener('click', deleteCssPreset);
+        // ▲▲▲ 新增结束 ▲▲▲
         // ▼▼▼ 【全新】字体预设功能事件监听器 ▼▼▼
         document.getElementById('font-preset-select').addEventListener('change', handleFontPresetSelectionChange);
         document.getElementById('save-font-preset-btn').addEventListener('click', saveFontPreset);
         document.getElementById('delete-font-preset-btn').addEventListener('click', deleteFontPreset);
+        // ▲▲▲ 新增结束 ▲▲▲
         // ▼▼▼ 【全新】气泡主题预设功能事件监听器 ▼▼▼
         document.getElementById('theme-preset-select').addEventListener('change', handleThemePresetSelectionChange);
         document.getElementById('save-theme-preset-btn').addEventListener('click', saveThemePreset);
@@ -39655,6 +40172,273 @@ document.getElementById('symptom-options').addEventListener('click', (e) => {
 });
 // ▲▲▲ 大姨妈记录事件绑定结束 ▲▲▲
 
+/* --- 【全新】“桃宝”App 事件监听器 --- */
+// ▼▼▼ 在这里粘贴下面的调试代码 ▼▼▼
+console.log("DEBUG: 正在查找桃宝主图标:", document.getElementById('taobao-app-icon'));
+console.log("DEBUG: 正在查找桃宝主屏幕:", document.getElementById('taobao-screen'));
+console.log("DEBUG: 正在查找桃宝页签容器:", document.querySelector('.taobao-tabs'));
+console.log("DEBUG: 正在查找添加商品按钮:", document.getElementById('add-product-btn'));
+// ▲▲▲ 粘贴结束 ▲▲▲
+
+/* --- 【全新】“桃宝”App 事件监听器 --- */
+
+// 1. 绑定主屏幕的App图标
+document.getElementById('taobao-app-icon').addEventListener('click', openTaobaoApp);
+// 绑定新加的“清空”按钮
+document.getElementById('clear-taobao-products-btn').addEventListener('click', clearTaobaoProducts);
+// ▼▼▼ 在 init() 的事件监听区域末尾，粘贴下面这整块新代码 ▼▼▼
+
+/* --- 【全新】桃宝购物车功能事件监听器 --- */
+
+// 1. 绑定App内部的页签切换
+document.querySelector('.taobao-tabs').addEventListener('click', (e) => {
+    if (e.target.classList.contains('taobao-tab')) {
+        switchTaobaoView(e.target.dataset.view);
+    }
+});
+
+// 2. 使用事件委托，处理商品列表和购物车列表中的所有点击
+document.getElementById('taobao-screen').addEventListener('click', async (e) => {
+    const target = e.target;
+    
+    // 点击“加入购物车”按钮
+    if (target.classList.contains('add-cart-btn')) {
+        const productId = parseInt(target.dataset.productId);
+        if (!isNaN(productId)) {
+            await handleAddToCart(productId);
+        }
+        return;
+    }
+    
+    const productCard = target.closest('.product-card');
+if (productCard && !target.classList.contains('add-cart-btn')) {
+    const productId = parseInt(productCard.dataset.productId);
+    if (!isNaN(productId)) {
+        await openProductDetail(productId);
+    }
+    return; // 处理完后立即退出，避免执行下面的逻辑
+}
+// ▲▲▲ 确认结束 ▲▲▲
+
+    // 点击购物车里的商品（图片或信息区），打开详情页
+    const cartItem = target.closest('.cart-item');
+    if (cartItem && (target.classList.contains('product-image') || target.closest('.cart-item-info'))) {
+         const productId = parseInt(target.dataset.productId);
+         if (!isNaN(productId)) {
+            await openProductDetail(productId);
+        }
+        return;
+    }
+
+    // 点击购物车数量控制按钮
+    if (target.classList.contains('quantity-increase')) {
+        const cartId = parseInt(target.dataset.cartId);
+        if (!isNaN(cartId)) await handleChangeCartItemQuantity(cartId, 1);
+        return;
+    }
+    if (target.classList.contains('quantity-decrease')) {
+        const cartId = parseInt(target.dataset.cartId);
+        if (!isNaN(cartId)) await handleChangeCartItemQuantity(cartId, -1);
+        return;
+    }
+
+    // 点击购物车删除按钮
+    if (target.classList.contains('delete-cart-item-btn')) {
+        const cartId = parseInt(target.dataset.cartId);
+        if (!isNaN(cartId)) {
+            const confirmed = await showCustomConfirm('移出购物车', '确定要删除这个宝贝吗？');
+            if (confirmed) await handleRemoveFromCart(cartId);
+        }
+        return;
+    }
+
+    // 点击分类页签
+    const categoryTab = target.closest('.category-tab-btn');
+    if (categoryTab) {
+        const category = categoryTab.dataset.category === 'all' ? null : categoryTab.dataset.category;
+        await renderTaobaoProducts(category);
+        return;
+    }
+});
+
+// 3. 绑定商品详情弹窗的关闭按钮
+document.getElementById('close-product-detail-btn').addEventListener('click', () => {
+    document.getElementById('product-detail-modal').classList.remove('visible');
+});
+
+// 4. 绑定结算按钮
+document.getElementById('checkout-btn').addEventListener('click', handleCheckout);
+
+
+// ▲▲▲ 新增事件监听结束 ▲▲▲
+
+
+// ▼▼▼ 用这块新代码替换旧的 'top-up-btn' 事件监听器 ▼▼▼
+document.getElementById('top-up-btn').addEventListener('click', async () => {
+    const amountStr = await showCustomPrompt("充值", "请输入要充值的金额 (元):", "", "number");
+    if (amountStr !== null) {
+        const amount = parseFloat(amountStr);
+        if (!isNaN(amount) && amount > 0) {
+            // 【核心修改】调用我们的新函数来处理充值和记录
+            await updateUserBalanceAndLogTransaction(amount, '充值');
+            await renderBalanceDetails(); // 刷新余额和明细
+            alert(`成功充值 ¥${amount.toFixed(2)}！`);
+        } else {
+            alert("请输入有效的金额！");
+        }
+    }
+});
+// ▲▲▲ 替换结束 ▲▲▲
+
+
+// 4. 绑定首页右上角的“+”按钮
+document.getElementById('add-product-btn').addEventListener('click', openAddProductChoiceModal);
+
+// 5. 绑定添加方式选择弹窗的按钮
+document.getElementById('add-product-manual-btn').addEventListener('click', () => {
+    document.getElementById('add-product-choice-modal').classList.remove('visible');
+    openProductEditor();
+});
+document.getElementById('add-product-link-btn').addEventListener('click', () => {
+    document.getElementById('add-product-choice-modal').classList.remove('visible');
+    openAddFromLinkModal();
+});
+document.getElementById('add-product-ai-btn').addEventListener('click', () => {
+    document.getElementById('add-product-choice-modal').classList.remove('visible');
+    handleGenerateProductsAI();
+});
+document.getElementById('cancel-add-choice-btn').addEventListener('click', () => {
+    document.getElementById('add-product-choice-modal').classList.remove('visible');
+});
+
+// 6. 绑定手动添加/编辑弹窗的按钮
+document.getElementById('cancel-product-editor-btn').addEventListener('click', () => {
+    document.getElementById('product-editor-modal').classList.remove('visible');
+});
+document.getElementById('save-product-btn').addEventListener('click', saveProduct);
+
+// 7. 绑定识别链接弹窗的按钮
+document.getElementById('cancel-link-paste-btn').addEventListener('click', () => {
+    document.getElementById('add-from-link-modal').classList.remove('visible');
+});
+document.getElementById('confirm-link-paste-btn').addEventListener('click', handleAddFromLink);
+
+// ▼▼▼ 在 init() 的事件监听器区域，用这块【新代码】替换旧的 'products-view' 点击事件 ▼▼▼
+document.getElementById('products-view').addEventListener('click', async (e) => {
+    const target = e.target;
+    
+    // 【核心修改】我们把原来的购买逻辑，改成了打开详情页的逻辑
+    const productCard = target.closest('.product-card');
+    if (productCard && !target.classList.contains('add-cart-btn')) {
+        const productId = parseInt(productCard.dataset.productId);
+        if (!isNaN(productId)) {
+            await openProductDetail(productId); // <--- 就是修改了这里！
+        }
+        return;
+    }
+    
+    // 下面这两部分逻辑保持不变
+    if (target.classList.contains('add-cart-btn')) {
+        const productId = parseInt(target.dataset.productId);
+        if (!isNaN(productId)) {
+            await handleAddToCart(productId);
+        }
+        return;
+    }
+    const categoryTab = target.closest('.category-tab-btn');
+    if (categoryTab) {
+        const category = categoryTab.dataset.category === 'all' ? null : categoryTab.dataset.category;
+        renderTaobaoProducts(category);
+        return;
+    }
+});
+// ▲▲▲ 替换结束 ▲▲▲
+
+
+// ▼▼▼ 把这一整块全新的事件监听器代码，粘贴到 init() 的事件监听器区域末尾 ▼▼▼
+
+/* --- 【全新】“桃宝”App 搜索与AI结果弹窗事件监听器 --- */
+
+// 1. 绑定搜索按钮
+productSearchBtn.addEventListener('click', handleSearchProductsAI);
+productSearchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        handleSearchProductsAI();
+    }
+});
+
+// 2. 绑定AI结果弹窗的关闭按钮
+document.getElementById('close-ai-products-modal-btn').addEventListener('click', async () => {
+    aiGeneratedProductsModal.classList.remove('visible');
+    // 关闭后刷新主页，显示新添加的商品
+    await renderTaobaoProducts(); 
+});
+
+// 3. 使用事件委托，处理结果弹窗内所有“添加”按钮的点击
+document.getElementById('ai-product-results-grid').addEventListener('click', async (e) => {
+    if (e.target.classList.contains('add-to-my-page-btn')) {
+        const button = e.target;
+        const productData = JSON.parse(button.dataset.product);
+        // ▼▼▼ 在这里粘贴下面这段新代码 ▼▼▼
+        // 【核心修改】如果AI返回的商品数据里没有图片URL
+        if (!productData.imageUrl) {
+            // 就调用我们的辅助函数，给它一张随机默认图
+            productData.imageUrl = getRandomDefaultProductImage();
+            console.log(`AI生成的商品 "${productData.name}" 缺少图片，已自动补充默认图。`);
+        }
+        // ▲▲▲ 新增代码粘贴结束 ▲▲▲
+        // 检查商品是否已存在
+        const existingProduct = await db.taobaoProducts.where('name').equals(productData.name).first();
+        if (existingProduct) {
+            alert('这个商品已经存在于你的桃宝主页啦！');
+            button.textContent = '已添加';
+            button.disabled = true;
+            return;
+        }
+
+        // 添加到数据库
+        await db.taobaoProducts.add(productData);
+        
+        // 禁用按钮并更新文本，给用户反馈
+        button.textContent = '✓ 已添加';
+        button.disabled = true;
+        
+        // （可选）给个小提示
+        // await showCustomAlert('添加成功', `“${productData.name}”已添加到你的桃宝！`);
+    }
+});
+
+// ▼▼▼ 在 init() 的事件监听器区域末尾，粘贴下面这整块新代码 ▼▼▼
+
+/* --- 【全新】桃宝订单物流功能事件监听器 --- */
+
+// 1. 使用事件委托，为“我的订单”列表中的所有订单项绑定点击事件
+document.getElementById('orders-view').addEventListener('click', (e) => {
+    const item = e.target.closest('.order-item');
+    if (item && item.dataset.orderId) {
+        const orderId = parseInt(item.dataset.orderId);
+        if (!isNaN(orderId)) {
+            openLogisticsView(orderId);
+        }
+    }
+});
+
+// 2. 绑定物流页面的返回按钮
+document.getElementById('logistics-back-btn').addEventListener('click', () => {
+    // 返回时，直接显示“桃宝”主界面，并自动切换到“我的订单”页签
+    showScreen('taobao-screen');
+    switchTaobaoView('orders-view'); 
+});
+
+/* --- 事件监听结束 --- */
+
+// ▲▲▲ 新增代码粘贴结束 ▲▲▲
+document.getElementById('share-cart-to-char-btn').addEventListener('click', handleShareCartRequest);
+// ▼▼▼ 在 init() 的事件监听器区域粘贴 ▼▼▼
+document.getElementById('buy-for-char-btn').addEventListener('click', handleBuyForChar);
+// ▲▲▲ 粘贴结束 ▲▲▲
+/* --- “桃宝”App 事件监听器结束 --- */
+
 document.getElementById('apply-appearance-preset-btn').addEventListener('click', applyAppearancePreset);
 document.getElementById('update-appearance-preset-btn').addEventListener('click', updateAppearancePreset);
 document.getElementById('export-appearance-preset-btn').addEventListener('click', exportAppearancePreset);
@@ -39678,15 +40462,17 @@ document.getElementById('keep-alive-switch').addEventListener('change', (e) => {
     state.globalSettings.enableForceKeepAlive = isEnabled;
     db.globalSettings.put(state.globalSettings);
 });
-
+// ▲▲▲ 新增事件绑定结束 ▲▲▲
 // ▼▼▼ 【全新】在应用初始化时，检查并启动强力保活 ▼▼▼
 if (state.globalSettings.enableForceKeepAlive) {
     // 我们给一个短暂的延迟，等待页面完全加载好
     setTimeout(startKeepAliveAudio, 500);
 }
-initTaobao();
-}
 console.log("DEBUG: init() 函数即将执行完毕！")
+initTaobao();
+
+}
+
 init();
 
 
@@ -42202,6 +42988,6 @@ if (bgmPlayer) {
 
 <!-- ▼▼▼ 【全新】这是强力保活功能专用的音频播放器 ▼▼▼ -->
 <audio id="keep-alive-player" loop></audio>
-<!-- ▲▲▲ 新增HTML结束 ▲▲▲ -->
+<script src="taobao.js"></script>
 </body>
 </html>
